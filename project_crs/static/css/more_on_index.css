@@ -1,0 +1,60 @@
+
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Sets the width to fill the container */
+    padding: 15px; /* Adds some padding inside the inputs and textarea for aesthetics */
+    margin-bottom: 20px; /* Adds space below each input/textarea */
+    border: 1px solid #ccc; /* Adds a border, you can adjust the color as needed */
+    border-radius: 4px; /* Adds rounded corners to the inputs and textarea */
+    box-sizing: border-box; /* Makes sure padding does not add to the total width */
+}
+
+.contact-form button {
+    /* Style your button as needed, ensuring it matches the width of the inputs */
+    width: auto; /* Or set a specific width */
+    padding: 10px 20px; /* Button padding */
+    /* Additional button styling */
+}
+
+
+/* =================================================================*/
+.hero-container {
+  height: 60vh;
+  background-color: #b5caee;
+  background-image: url(../images/candlestick-patterns-hero.jpg);
+  background-size: cover;
+  background-position: center center; // Ensure the background is centered
+  display: flex;
+  align-items: center; // Align content vertically
+  justify-content: center; // Align content horizontally
+}
+
+
+
+
+.h2-hero {
+
+    color: #d9e6f2;
+    font-weight: 100;
+    font-size:30px;
+
+}
+.h1-hero {
+
+    color: gold;
+    font-weight: 300;
+    font-size:40px;
+
+}
+
+.p-hero {
+
+    color: #d9e6f2;
+    font-weight: 100;
+    font-size:20px;
+
+}
+
+
+

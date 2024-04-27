@@ -1,0 +1,250 @@
+
+/* Add to your existing stylesheet or within a <style> tag in your HTML */
+body {
+
+
+    background-image: linear-gradient(to right, #dfe9f3 0%, white 100%);
+
+}
+
+
+
+
+#signin_btn {
+    color: white;
+    width: 100%;
+    padding: 10px 170px;        /* More padding for a bigger look */
+    font-size: 28px;           /* Larger text inside the button */
+    font-weight: bold;
+    border: 2px solid yellow;  /* Optional: Adds a yellow border */
+     transition: color 0.3s ease;
+}
+
+#signin_btn:hover {
+    background-color: transparent;  /* Changes background to yellow on hover */
+    color: gold;              /* Changes text color to black on hover */
+}
+
+/* styles.css */
+
+.scroll-bar {
+    overflow: auto;
+}
+
+/* Basic resets */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+/* Styles for the big container that holds everything */
+.big-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 60vh;
+    border: 0px solid gold;
+    box-sizing: border-box;
+}
+
+/* Container for row layout */
+.row-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Individual containers for content */
+.content-container {
+    flex: 1;
+    border: 0px solid gold;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+select, option {
+    color: black;
+}
+
+select::selection, option::selection {
+    background-color: gold;
+}
+
+
+#send_btn {
+    color: white;
+    width: 100%;
+    padding: 10px 20px;        /* More padding for a bigger look */
+    font-size: 18px;           /* Larger text inside the button */
+    border: 2px solid yellow;  /* Optional: Adds a yellow border */
+}
+
+#send_btn:hover {
+    background-color: gold;  /* Changes background to yellow on hover */
+    color: white;              /* Changes text color to black on hover */
+}
+
+.flex-container {
+    display: flex;
+}
+.work_section {
+    flex: 1;  /* Makes each section take equal width */
+}
+/* ------------------------------------------------------------------*/
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tradingview-widget-container {
+    height: 600px; /* or use 'height: 80vh;' for 80% of the viewport height */
+    width: 100%;
+}
+
+.tradingview-widget-container__widget {
+    height: calc(100% - 32px);
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .tradingview-widget-container {
+        height: 400px; /* Smaller height for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .tradingview-widget-container {
+        height: 300px; /* Even smaller height for mobile devices */
+    }
+}
+
+.tradingview-widget-container {
+    min-height: 250px; /* Ensure there is a reasonable minimum height */
+    width: 100%;
+}
+
+.tradingview-widget-container__widget {
+    min-height: calc(100% - 32px);
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .tradingview-widget-container {
+        min-height: 200px; /* Smaller height for mobile devices */
+    }
+    .tradingview-widget-container__widget {
+        min-height: calc(100% - 20px); /* Adjust based on your needs */
+    }
+}
+/* ------------------------------------------------------------------*/
+
+
+
+.heading_container {
+    text-align: center;
+}
+
+.responsive-image {
+    max-width: 100%; /* makes images responsive */
+    height: auto; /* maintains the aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .heading_container h2, .heading_container p {
+        padding: 0 10px; /* adds padding on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .heading_container h2 {
+        font-size: 1.5rem; /* smaller font size for small devices */
+    }
+}
+
+/* ---------------------------------------------------------------- */
+
+.card-body h5, .card-body p {
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.25rem; /* smaller font size for tablets */
+    }
+    .card-text {
+        font-size: 0.875rem; /* smaller font size for text in cards on tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1rem; /* even smaller font size for phones */
+    }
+    .card-text {
+        font-size: 0.8rem; /* even smaller font size for text in cards on phones */
+    }
+}
+
+
+
+#time {
+    font-weight: bold; /* Makes the time bold */
+    color: black; /* Sets the color to a calm blue */
+    font-size: 1.5em; /* Increases the font size for better visibility */
+    background-color: #f0f0f0; /* Light grey background for the clock */
+    padding: 5px 10px; /* Padding around the text for better spacing */
+    border-radius: 5px; /* Rounded corners for the background */
+    border: 2px solid gold; /* Blue border to match the text color */
+    display: inline-block;
+    margin-left: 10px; /* Space between label and time */
+}
+
+h4 {
+    color: #333; /* Dark grey color for the text */
+    font-family: 'Arial', sans-serif; /* Modern, readable font */
+    display: flex; /* Flex display to align text and clock nicely */
+    align-items: center; /* Aligns the text and clock vertically */
+    font-size: 1.5em; /* Adjust the size of the heading */
+}
+
+
+.interval-display {
+    font-weight: normal; /* Normal weight for the text */
+    color: #333; /* Dark grey color for the text */
+    font-size: 1.5em; /* Adjust the size of the heading */
+    font-family: 'Arial', sans-serif; /* Modern, readable font */
+    margin-bottom: 10px; /* Adds some space below the element */
+}
+
+.interval-value {
+    font-weight: bold; /* Makes the interval value bold */
+    color: black; /* Sets the color to a strong blue */
+    background-color: #eef6fc; /* Very light blue background for the value */
+    padding: 5px 10px; /* Padding around the text for better spacing */
+    border-radius: 5px; /* Rounded corners for the background */
+    border: 1px solid gold; /* Blue border to match the text color */
+    display: inline-block;
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Aligns children to the left and right */
+    align-items: center; /* Vertically centers the content */
+    padding: 10px; /* Optional: Adds padding around the content */
+}
+
+.interval-display, .current-time {
+    margin: 0; /* Removes default margin to control spacing better */
+    padding: 5px 10px; /* Adds padding for better readability */
+    font-size: 1em; /* Adjust font size as necessary */
+}
+
+/*----------------------------------------------------------------*/

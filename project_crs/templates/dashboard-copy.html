@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Dash board</title>
+  {% load static %}
+
+
+
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/style.css.map' %}" rel="stylesheet" />
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/style.scss' %}" rel="stylesheet" />
+  <link href="{% static 'css/dash.css' %}" rel="stylesheet" >
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+    <style>
+        .scroll-bar{
+            overflow: auto;
+        {
+    </style>
+
+
+   <style>
+        /* Basic resets */
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Styles for the big container that holds everything */
+        .big-container {
+            display: flex;
+            flex-direction: column;  /* Stack children vertically */
+            width: 100%;  /* Full width of the viewport */
+            min-height: 60vh;  /* At least the height of the viewport */
+            border: 1px solid gold;  /* Highlight the big container with a gold border */
+            box-sizing: border-box;  /* Include padding and border in the width */
+        }
+
+        /* Container for row layout */
+        .row-container {
+            display: flex;
+            width: 100%;  /* Take up all horizontal space */
+        }
+
+        /* Individual containers for content */
+        .content-container {
+            flex: 1;  /* Each container takes equal width */
+            border: 0px solid gold;
+            padding: 50px;
+            box-sizing: border-box;  /* Include padding and border in the width calculation */
+        }
+    </style>
+    <style>
+          select, option {
+              color: black;  /* Ensuring text is visible against a light background */
+          }
+
+          select::selection, option::selection {
+              background-color: gold;  /* Gold background when text/option is selected */
+          }
+    </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Dashboard
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+
+              </ul>
+              <div class="user_option">
+                <a href="">
+                  <img src="{% static 'images/user.png' %}" alt="">
+                </a>
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+<!-- selection section -->
+  <section class="work_section layout_padding">
+
+    <div class="container">
+        <div class="heading_container">
+            <h2>Welcome {{ name }}</h2>
+            <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+        </div>
+    </div>
+    <form method="post" action="{% url 'dashboard' %}">
+        {% csrf_token %}
+        <div class="big-container container-fluid">
+            <div class="row-container row justify-content-center">
+                <div class="col-sm-12 col-md-4 d-flex align-items-stretch">
+                    <div class="card mb-4">
+                        <img src="{% static 'images/bullz.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="color:gold;">Symbols</h5>
+                            <p class="card-text">Click on the dropdown below.</p>
+
+                            <select class="form-select" name="symbol_choice" aria-label="Default select example">
+                                <option value="EURUSD=X">EURUSD</option>
+                                <option value="GBPUSD=X">GBPUSD=X</option>
+                                <option value="GBPCHF=X">GBPCHF=X</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="  col-sm-12 col-md-4 d-flex align-items-stretch">
+                    <div class="card mb-4">
+                        <img src="{% static 'images/bullz.jpg' %}" class="card-img-top" alt="...">
+                        <div class=" card-body text-center">
+                            <h5 class="card-title" style="color:gold;">Candlestick Pattern</h5>
+                            <p class="card-text">Click on the dropdown below.</p>
+                            <select class="form-select" name="pattern_choice" aria-label="Pattern select example">
+                                <option value="CDLDOJI">doji</option>
+                                <option value="CDLENGULFING">engulfing</option>
+                                <option value="CDLHAMMER">hammer</option>
+                                <option value="CDLSHOOTINGSTAR">shooting star</option>
+                                <option value="CDLHARAMI">harami</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 d-flex align-items-stretch">
+                    <div class="card mb-4">
+                        <img src="{% static 'images/bullz.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="color:gold;">Time Intervals</h5>
+                            <p class="card-text">Click on the dropdown below.</p>
+                            <select class="form-select" name="interval_choice" aria-label="Default select example">
+                                <option value="1h">1 hour</option>
+                                <option value="30m">30 minutes</option>
+                                <option value="15m">15 minutes</option>
+                                <option value="5m">5 minutes</option>
+                                <option value="2m">2 minutes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ---------------------------------------------------------------------------------------- -->
+
+
+
+        <!-- Text area section -->
+      <section class="work_section layout_padding">
+
+        <form method="post" action="{% url 'dashboard' %}">
+        {% csrf_token %}
+            <div class="big-container container-fluid">
+                <div class="container">
+
+                    <div class="heading_container" style="text-align:center;">
+                        <h2>Candle stick Patterns: {{ symbol_choice }}</h2>
+                        <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    </div>
+                    <!-- This div will display the results if there are any -->
+                    <!-- Results display section -->
+                    <div class="scroll-bar">
+                         {% if dashboard_results %}
+                            <div class="output_container" style="background-color: #f8f9fa; padding: 20px; margin-top: 20px;">
+                                <h4>Candle stick Patterns Results:</h4>
+                                <pre>{{ dashboard_results }}</pre>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container text-center">
+                <button type="submit" class="btn btn-outline-warning btn-dark btn-primary btn-block mb-4">Print Pattern</button>
+            </div>
+        </form>
+      </section>
+
+
+    <!-- view chart section -->
+      <section class="work_section layout_padding">
+        <div class="big-container container-fluid">
+            <div class="container">
+                <div class="heading_container" style="text-align:center;">
+                    <h2>
+                        Chart {{ symbol_choice }}
+                    </h2>
+                    <p>
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation
+                    </p>
+                </div>
+            </div>
+        </div>
+        <form action="{% url 'plot_chart' %}" method="post">
+            {% csrf_token %}
+            <div class="container text-center">
+                <button type="submit" class="btn btn-outline-warning btn-dark btn-primary btn-block mb-4">Generate Chart</button>
+            </div>
+        </form>
+      </section>
+    <!-- end work section -->
+
+    <!-- Trade proposal  section -->
+      <section class="work_section layout_padding">
+         <form action="{% url 'trade_proposal' %}" method="post">
+           {% csrf_token %}
+            <div class="big-container container-fluid">
+                <div class="container">
+                    <div class="heading_container" style="text-align:center;">
+                        <h2>Trade Proposal Generator {{trade_proposal_symbol_choice}}</h2>
+                        <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                    </div>
+                    <!-- Begin form for selecting symbol and submitting for trade proposal -->
+
+                    <!-- Symbol selection dropdown -->
+                    <select class="form-select" name="symbol_choice" aria-label="Default select example">
+                        <option value="EURUSD=X">EURUSD</option>
+                        <option value="GBPUSD=X">GBPUSD</option>
+                        <option value="GBPCHF=X">GBPCHF</option>
+                    </select>
+
+                    <!-- Results display section -->
+                    <div class="scroll-bar">
+                         {% if trade_proposal_results %}
+                            <div class="output_container" style="background-color: #f8f9fa; padding: 20px; margin-top: 20px;">
+                                <h4>Trade Proposal Results:</h4>
+                                <pre>{{ trade_proposal_results }}</pre>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center">
+                    <!-- Submission button for the form -->
+                    <button type="submit" class="btn btn-outline-warning btn-dark btn-primary btn-block mb-4">Generate Trade</button>
+            </div>
+
+
+         </form>
+      </section>
+    </form>
+  </section>
+
+
+  <section>
+
+              <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container" style="height:100%;width:100%">
+          <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          <script>
+                            // Mapping from HTML select values to TradingView symbol codes
+                            var symbols = {
+                                "EURUSD=X": "OANDA:EURUSD",
+                                "GBPUSD=X": "OANDA:GBPUSD",
+                                "GBPCHF=X": "OANDA:GBPCHF",
+                                "EURGBP=X": "OANDA:EURGBP",
+                                "AUDUSD=X": "OANDA:AUDUSD",
+                                "EURCHF=X": "OANDA:EURCHF"
+                            };
+
+                            function load_chart(selectedSymbol) {
+                                // Look up the TradingView symbol using the selected option value
+                                var tradingViewSymbol = symbols[selectedSymbol];
+
+                                // Check if the chart script tag already exists, and remove it if it does
+                                var existingScript = document.getElementById('tradingview-script');
+                                if (existingScript) {
+                                    existingScript.remove();
+                                }
+
+                                // Create the script tag for the TradingView chart
+                                var script = document.createElement('script');
+                                script.id = 'tradingview-script';
+                                script.type = 'text/javascript';
+                                script.async = true;
+                                script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+
+                                // Chart configuration
+                                var config = {
+                                    "container_id": "tradingview-chart",
+                                    "width": "1107",
+                                    "height": "500",
+                                    "symbol": tradingViewSymbol,  // Use the mapped symbol
+                                    "interval": "15",
+                                    "timezone": "Etc/UTC",
+                                    "theme": "dark",
+                                    "style": "1",
+                                    "locale": "en",
+                                    "enable_publishing": false,
+                                    "hide_side_toolbar": false,
+                                    "allow_symbol_change": true,
+                                    "calendar": false,
+                                    "support_host": "https://www.tradingview.com"
+                                };
+
+                                // Setting the innerHTML of script to pass the configuration as a JSON string
+                                script.innerHTML = JSON.stringify(config);
+
+                                // Append the script to the body to load the chart
+                                document.body.appendChild(script);
+                            }
+          </script>
+        </div>
+        <!-- TradingView Widget END -->
+
+
+  </section>
+      <!-- end of main section -->
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- owl carousel script 
+    -->
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      navText: [],
+      center: true,
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+  </script>
+  <!-- end owl carousel script
+
+   <select class="form-select" name="pattern_choice" aria-label="Pattern select example">
+                                <option value="CDL2CROWS"> 2 crows </option>
+                                <option value="CDL3BLACKCROWS"> 3 black crows </option>
+                                <option value="CDL3INSIDE"> 3 inside </option>
+                                <option value="CDL3LINESTRIKE"> 3 line strike </option>
+                                <option value="CDL3OUTSIDE"> 3 outside </option>
+                                <option value="CDL3STARSINSOUTH"> 3 stars in south </option>
+                                <option value="CDL3WHITESOLDIERS">3 white soldiers</option>
+                                <option value="CDLABANDONEDBABY">abandoned baby</option>
+                                <option value="CDLADVANCEBLOCK">advance block</option>
+                                <option value="CDLBELTHOLD">belt hold</option>
+                                <option value="CDLBREAKAWAY">breakaway</option>
+                                <option value="CDLCLOSINGMARUBOZU">closing marubozu</option>
+                                <option value="CDLCONCEALBABYSWALL">conceal baby's wall</option>
+                                <option value="CDLCOUNTERATTACK">counter attack</option>
+                                <option value="CDLDARKCLOUDCOVER">dark cloud cover</option>
+                                <option value="CDLDOJI">doji</option>
+                                <option value="CDLDOJISTAR">doji star</option>
+                                <option value="CDLDRAGONFLYDOJI">dragon fly doji</option>
+                                <option value="CDLENGULFING">engulfing</option>
+                                <option value="CDLEVENINGDOJISTAR">evening doji star</option>
+                                <option value="CDLEVENINGSTAR">evening star</option>
+                                <option value="CDLGRAVESTONEDOJI">grave stone doji</option>
+                                <option value="CDLHAMMER">hammer</option>
+                                <option value="CDLHANGINGMAN">hanging man</option>
+                                <option value="CDLHARAMI">harami</option>
+                                <option value="CDLHARAMICROSS">harami cross</option>
+                                <option value="CDLHIGHWAVE">high wave</option>
+                                <option value="CDLHIKKAKE">hikkake</option>
+                                <option value="CDLHIKKAKEMOD">hikkake mod</option>
+                                <option value="CDLHOMINGPIGEON">homing pigeon</option>
+                                <option value="CDLIDENTICAL3CROWS">identical 3 crows</option>
+                                <option value="CDLINNECK">in neck</option>
+                                <option value="CDLINVERTEDHAMMER">inverted hammer</option>
+                                <option value="CDLKICKING">kicking</option>
+                                <option value="CDLLADDERBOTTOM">ladder bottom</option>
+                                <option value="CDLLONGLEGGEDDOJI">long legged doji</option>
+                                <option value="CDLLONGLINE">long line</option>
+                                <option value="CDLMARUBOZU">marubozu</option>
+                                <option value="CDLMATCHINGLOW">matching low</option>
+                                <option value="CDLMATHOLD">mat hold</option>
+                                <option value="CDLMORNINGDOJISTAR">morning doji star</option>
+                                <option value="CDLMORNINGSTAR">morning star</option>
+                                <option value="CDLONNECK">on neck</option>
+                                <option value="CDLPIERCING">piercing</option>
+                                <option value="CDLRICKSHAWMAN">rick shawman</option>
+                                <option value="CDLSEPARATINGLINES">separating lines</option>
+                                <option value="CDLSHOOTINGSTAR">shooting star</option>
+                                <option value="CDLSHORTLINE">short line</option>
+                                <option value="CDLSPINNINGTOP">spinning top</option>
+                                <option value="CDLSTALLEDPATTERN">stalled pattern</option>
+                                <option value="CDLSTICKSANDWICH">stick sandwich</option>
+                            </select>
+
+  -->
+
+</body>
+
+</html>
