@@ -15,7 +15,7 @@ from django.http import Http404
 # ------------------------
 import pandas as pd
 import yfinance as yf
-import talib
+#import talib
 import numpy as np
 import plotly.graph_objects as go
 import plotly.offline as py_off
