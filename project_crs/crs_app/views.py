@@ -10,8 +10,6 @@ import io
 import sys
 from django.http import Http404
 
-
-
 # ------------------------
 import pandas as pd
 import yfinance as yf
@@ -23,7 +21,6 @@ from lightweight_charts import Chart
 # Plotting imports
 import matplotlib.pyplot as plt
 import mplfinance as mpf
-
 
 from .candles import fetch_historical_data, clean_data, identify_candlestick_patterns, plot_candlestick_chart
 from .candles import print_specific_pattern

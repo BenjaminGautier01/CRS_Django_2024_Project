@@ -515,6 +515,11 @@ def CDLHANGINGMAN(df, threshold=0.2):
 
 '''def identify_candlestick_patterns(df):
     """
+    NOTE : this function works perfectly as it is inteded the reason why it is not used is that talib requires for any one to use their library and external
+    wheel file must be dowloaded that is tailored for your computer if you need to clone this project to an other pc it will make things 
+    difficult to set up so to save the user from the stress to downloading external files and setting it up. and also avoid feature errors during deployment
+     stages the decision was made to extract the functions
+    of each candle stick pattern as seen above. 
     Identify candlestick patterns using TA-Lib and return a DataFrame with these patterns flagged.
     """
     pattern_functions = {name: func for name, func in talib.__dict__.items() if 'CDL' in name}
@@ -525,8 +530,8 @@ def CDLHANGINGMAN(df, threshold=0.2):
         pattern_data.append(result_df)
     patterns = pd.concat(pattern_data, axis=1)
     return patterns
-'''
 
+'''
 
 def print_all_patterns(patterns):
     """
@@ -615,7 +620,7 @@ def fetch_live_price(symbol):
         return None
 
 
-# Example usage
+
 if __name__ == "__main__":
     symbol = "EURUSD=X"
     period = "1mo"

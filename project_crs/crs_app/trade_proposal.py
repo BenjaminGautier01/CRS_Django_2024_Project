@@ -14,7 +14,9 @@ import mplfinance as mpf
 
 def fetch_tradingview_indicators_summary(symbol):
     # Dictionary of symbols to handle different cases
-    symbols = {'EURUSD=X': 'EURUSD', 'GBPUSD=X': 'GBPUSD',"GBPCHF=X" : "GBPCHF", "EURGBP=X" : "EURGBP", "AUDUSD=X" : "AUDUSD", "EURCHF=X" : "EURCHF"   ,'GOLD=X': 'GOLD'}
+    symbols = {'EURUSD=X': 'EURUSD', 'GBPUSD=X': 'GBPUSD',"GBPCHF=X" : "GBPCHF", "EURGBP=X" : "EURGBP",
+               "AUDUSD=X" : "AUDUSD", "EURCHF=X" : "EURCHF"   ,'GOLD=X': 'GOLD'}
+
 
     # Determine the appropriate symbol key from the dictionary
     symbol_key = symbols.get(symbol, None)
@@ -54,7 +56,7 @@ def fetch_live_price(symbol):
     """
     stock = yf.Ticker(symbol)
     # Fetch data
-    data = stock.history(period="1d")  # You can adjust the period and interval
+    data = stock.history(period="2m")  # You can adjust the period and interval
     if not data.empty:
         last_close = data['Close'].iloc[-1]  # Get the last close price
         return last_close
