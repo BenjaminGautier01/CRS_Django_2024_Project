@@ -2,8 +2,8 @@ import pandas as pd
 import yfinance as yf
 # import talib
 import numpy as np
-import plotly.graph_objects as go
-import plotly.offline as py_off
+#import plotly.graph_objects as go
+#import plotly.offline as py_off
 from lightweight_charts import Chart
 from tradingview_ta import TA_Handler, Interval, Exchange
 
@@ -121,14 +121,14 @@ def trade_proposal_live_price(symbol):
     return trade_proposal
 
 
-# Example usage
-if __name__ == "__main__":
-
-
-    # Example usage
-    try:
-        trade_proposal_live_price(symbol=symbol)
-    except Exception as e:
-        print(e)
-
+# # Example usage
+# if __name__ == "__main__":
+#
+#
+#     # Example usage
+#     try:
+#         # trade_proposal_live_price(symbol=symbol)
+#     except Exception as e:
+#         print(e)
+#
 

@@ -1,7 +1,7 @@
 import pandas as pd
 import yfinance as yf
 # import talib
-import plotly.graph_objects as go
+# import plotly.graph_objects as go
 import mplfinance as mpf
 from bokeh.plotting import figure, show
 from bokeh.models import ColumnDataSource
@@ -595,14 +595,14 @@ def print_specific_pattern(patterns, specific_pattern):
         print(f"No '{trimmed_pattern_name}' was found during analysis.")
 
 
-def plot_candlestick_chart(df, patterns, specific_pattern=None):
-    """
-    Plot the candlestick chart using lightweight-charts and highlight patterns.
-    """
-    chart = Chart()
-    chart.legend(visible=True)
-    chart.set(df)
-    chart.show(block=True)
+# def plot_candlestick_chart(df, patterns, specific_pattern=None):
+#     """
+#     Plot the candlestick chart using lightweight-charts and highlight patterns.
+#     """
+#     chart = Chart()
+#     chart.legend(visible=True)
+#     chart.set(df)
+#     chart.show(block=True)
 
 
 def fetch_live_price(symbol):

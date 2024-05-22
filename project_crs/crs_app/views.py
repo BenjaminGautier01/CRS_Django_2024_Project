@@ -15,14 +15,14 @@ import pandas as pd
 import yfinance as yf
 #import talib
 import numpy as np
-import plotly.graph_objects as go
-import plotly.offline as py_off
+#import plotly.graph_objects as go
+#import plotly.offline as py_off
 from lightweight_charts import Chart
 # Plotting imports
 import matplotlib.pyplot as plt
 import mplfinance as mpf
 
-from .candles import fetch_historical_data, clean_data, identify_candlestick_patterns, plot_candlestick_chart
+from .candles import fetch_historical_data, clean_data, identify_candlestick_patterns
 from .candles import print_specific_pattern
 from .trade_proposal import fetch_tradingview_indicators_summary,fetch_live_price,trade_proposal_live_price
 from .models import Message  # Make sure to import your Message model
@@ -299,7 +299,7 @@ def plot_chart(request):
             df = fetch_historical_data(symbol_choice, '1mo', interval_choice)
             df = clean_data(df)
             patterns = identify_candlestick_patterns(df)
-            plot_candlestick_chart(df, patterns, specific_pattern=pattern_choice)
+           # plot_candlestick_chart(df, patterns, specific_pattern=pattern_choice)
 
             clean_symbol = symbol_choice.replace('=X', '')
 
